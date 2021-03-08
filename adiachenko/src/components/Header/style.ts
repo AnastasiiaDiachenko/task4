@@ -47,25 +47,6 @@ const HeaderStyled = styled.header`
     justify-content: space-between;
     padding: 0 40px;
   }
-
-  input {
-    width: 74%;
-    min-height: 60px;
-    background: rgba(79, 79, 79, 0.7);
-    padding-left: 20px;
-    border: 0;
-    border-radius: 10px;
-    font-size: 25px;
-    color: #${variables.colors.MAIN};
-
-    ::placeholder,
-    ::-webkit-input-placeholder {
-      color: #${variables.colors.MAIN};
-    }
-    :-ms-input-placeholder {
-      color: #${variables.colors.MAIN};
-    }
-  }
 `;
 
 export default HeaderStyled;

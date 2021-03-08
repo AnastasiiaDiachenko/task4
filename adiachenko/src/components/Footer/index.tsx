@@ -10,6 +10,7 @@ const FooterStyled = styled.footer`
   justify-content: center;
   background: #${variables.background.FOOTER};
   min-height: 60px;
+  z-index: 1;
 `;
 
 const Footer = () => (

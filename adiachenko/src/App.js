@@ -20,7 +20,7 @@ function App() {
         <ThemeProvider theme={ MainTheme }>
           <Header />
           <MainContent />
-          <Footer/>
+          <Footer />
         </ThemeProvider>
       </div>
   );

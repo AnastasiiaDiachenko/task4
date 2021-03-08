@@ -1,4 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
+import { variables } from './helpers/styleVariables';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -33,6 +34,21 @@ const GlobalStyle = createGlobalStyle`
   select,
   input {
     outline: none;
+    min-height: 40px;
+    background: rgba(79, 79, 79, 0.7);
+    padding-left: 20px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 25px;
+    color: #${variables.colors.MAIN};
+
+    ::placeholder,
+    ::-webkit-input-placeholder {
+      color: #${variables.colors.MAIN};
+    }
+    :-ms-input-placeholder {
+      color: #${variables.colors.MAIN};
+    }
   }
 `;
 

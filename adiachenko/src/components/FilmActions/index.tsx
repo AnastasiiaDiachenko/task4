@@ -2,19 +2,25 @@ import React from "react";
 import Actions from './styles';
 
 interface FilmActionsProps {
-  action: () => void
+  close: () => void,
+  openEdit: () => void,
+  openDelete: () => void
 }
 
-const FilmActions = ({action}: FilmActionsProps) => (
+const FilmActions = ({close, openEdit, openDelete}: FilmActionsProps) => (
   <Actions>
     <button
       className="close"
-      onClick={action}
+      onClick={close}
     >
       X
     </button>
-    <button>Edit</button>
-    <button>Delete</button>
+    <button onClick={() => openEdit()}>
+        Edit
+    </button>
+    <button onClick={() => openDelete()}>
+        Delete
+    </button>
   </Actions>
 );
 

@@ -4,6 +4,9 @@ import FilmStyled from "./style";
 import FilmActions from "../FilmActions";
 import FilmInfo from "../FilmInfo";
 import FilmOptions from "../FilmOptions";
+import FilmForm from "../FilmForm";
+import { PopUp } from "../PopUp";
+import DeleteFilm from "../DeleteFilm";
 
 type FilmsProps = {
   film: FilmProps
@@ -12,16 +15,41 @@ type FilmsProps = {
 const Film = ({film}: FilmsProps) => {
 
   const [isActionsVisible, setActionsVisible] = useState(false);
+  const [isFormActive, setFormActive] = useState(false);
+  const [isDeleteOpen, setDeleteOpen] = useState(false);
   const release = film.release_date.split('-')[0];
 
   const hideActions = () => setActionsVisible(false);
   const showActions = () => setActionsVisible(true);
 
+  const closeForm = () => setFormActive(false);
+  const closeDeleteForm = () => setDeleteOpen(false);
+
+  const openDelete = () => {
+      setDeleteOpen(true);
+      hideActions();
+  };
+
+  const openEdit = () => {
+      setFormActive(true);
+      hideActions();
+  };
+
+
+  const deleteFilm = () => {
+      console.log('Deleted ! ' + film.id);
+      closeDeleteForm();
+  };
+
   return (
     <FilmStyled>
       {
         isActionsVisible &&
-          <FilmActions action={ hideActions } />
+          <FilmActions
+              close={ hideActions }
+              openEdit={ openEdit }
+              openDelete={ openDelete }
+          />
       }
       <FilmOptions action={ showActions } />
 
@@ -31,6 +59,31 @@ const Film = ({film}: FilmsProps) => {
         genres={film.genres}
         poster_path={film.poster_path}
       />
+
+      {
+        isFormActive && (
+            <PopUp
+                closeForm={closeForm}
+            >
+                <FilmForm
+                    closeForm={closeForm}
+                    film={film}
+                    edit
+                />
+            </PopUp>
+        )
+      }
+      {
+          isDeleteOpen && (
+              <PopUp
+                  closeForm={closeDeleteForm}
+              >
+                  <DeleteFilm
+                      deleteFilm={deleteFilm}
+                  />
+              </PopUp>
+          )
+      }
     </FilmStyled>
   )
 };

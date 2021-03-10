@@ -29,23 +29,36 @@ const initialFilm: initialFilmType = {
     runtime: 0
 }
 
+enum optionsEnum {
+    Fantasy = 'Fantasy',
+    Adventure = 'Adventure',
+    Action = 'Action',
+    Science = 'Science Fiction',
+    Drama = 'Drama',
+    Romance = 'Romance',
+    Comedy = 'Comedy',
+    Family = 'Family',
+    Animation = 'Animation'
+}
+
 const options = [
-    { value: 'Fantasy', label: 'Fantasy' },
-    { value: 'Adventure', label: 'Adventure' },
-    { value: 'Science Fiction', label: 'Science Fiction' },
-    { value: 'Drama', label: 'Drama' },
-    { value: 'Romance', label: 'Romance' },
-    { value: 'Action', label: 'Action' },
-    { value: 'Comedy', label: 'Comedy' },
-    { value: 'Family', label: 'Family' },
-    { value: 'Animation', label: 'Animation' }
+    { value: optionsEnum.Fantasy, label: optionsEnum.Fantasy },
+    { value: optionsEnum.Adventure, label: optionsEnum.Adventure },
+    { value: optionsEnum.Science, label: optionsEnum.Science },
+    { value: optionsEnum.Drama, label: optionsEnum.Drama },
+    { value: optionsEnum.Romance, label: optionsEnum.Romance },
+    { value: optionsEnum.Action, label: optionsEnum.Action },
+    { value: optionsEnum.Comedy, label: optionsEnum.Comedy },
+    { value: optionsEnum.Family, label: optionsEnum.Family },
+    { value: optionsEnum.Animation, label: optionsEnum.Animation }
 ];
 
 const customStyles = {
     valueContainer: (provided: any) => ({
         ...provided,
         height: '40px',
-        background: 'rgba(79,79,79,0.7)'
+        background: 'rgba(79,79,79,0.7)',
+        borderRadius: '15px 0 0 15px'
     }),
     indicatorsContainer: (provided: any) => ({
         ...provided,
@@ -63,7 +76,8 @@ const customStyles = {
     }),
     control: (provided: any) => ({
         ...provided,
-        background: 'rgb(79,79,79)',
+        background: 'transparent',
+        border: 0
     }),
 };
 

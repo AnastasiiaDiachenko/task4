@@ -5,6 +5,10 @@ import {variables} from "../../helpers/styleVariables";
 const SortBlock = styled.div`
   display: flex;
   align-items: center;
+
+  @media (max-width: 850px) {
+    justify-content: center;
+  }
 `;
 
 const SortLadel = styled.span`

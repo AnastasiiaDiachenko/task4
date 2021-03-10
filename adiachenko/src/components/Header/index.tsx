@@ -37,7 +37,7 @@ const Header = () => {
           </h1>
 
           <div className="search-wrapper">
-            <input placeholder="What do you want to watch?" />
+            <input className="search-input" placeholder="What do you want to watch?" />
 
             <Button>
               Search

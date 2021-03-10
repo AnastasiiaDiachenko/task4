@@ -18,11 +18,10 @@ const PopUpWrapper = styled.div`
     padding: 20px 50px;
     margin: 70px auto 0 auto;
     background: #${variables.background.MAIN};
-    max-height: 80vh;
-    overflow-y: auto;
   }
 
   .close {
+    position: absolute;
     background: #${variables.background.MAIN};
     height: 40px;
     width: 40px;
@@ -32,20 +31,26 @@ const PopUpWrapper = styled.div`
   }
 `;
 
-const PopUp = ({closeForm, children}: any) => {
-    return (
-        <PopUpWrapper>
-            <div className="content">
-                <button
-                    className="close"
-                    onClick={() => closeForm()}
-                >
-                    X
-                </button>
-                {children}
-            </div>
-        </PopUpWrapper>
-    )
+type PopUpProps = {
+    closeForm: () => void,
+    children: React.ReactNode
 };
+
+const PopUp = ({closeForm, children}: PopUpProps) => (
+    <PopUpWrapper onClick={() => closeForm()}>
+        <div
+            className="content"
+            onClick={e => e.stopPropagation()}
+        >
+            <button
+                className="close"
+                onClick={() => closeForm()}
+            >
+                X
+            </button>
+            {children}
+        </div>
+    </PopUpWrapper>
+);
 
 export {PopUp};

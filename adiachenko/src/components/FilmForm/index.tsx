@@ -1,4 +1,4 @@
-import React, {SyntheticEvent, useState} from "react";
+import React, { MouseEvent, useState } from "react";
 import Select from 'react-select';
 import { ThemeProvider } from "styled-components";
 import { Button, ButtonTheme } from "../Button";
@@ -69,7 +69,7 @@ const customStyles = {
 
 const FilmForm = ({film, edit, closeForm}: FilmFormProps) => {
     const [filmSate, setFilm] = useState(film);
-    const resetForm = (event: SyntheticEvent) => {
+    const resetForm = (event: MouseEvent) => {
         event.preventDefault();
         if (edit) {
             setFilm(film);
@@ -78,7 +78,7 @@ const FilmForm = ({film, edit, closeForm}: FilmFormProps) => {
         }
     };
 
-    const submitForm = (event: SyntheticEvent, save: boolean) => {
+    const submitForm = (event: MouseEvent, save: boolean) => {
         event.preventDefault();
         console.log(filmSate);
         if (save) {

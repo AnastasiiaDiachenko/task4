@@ -92,6 +92,9 @@ const FilmForm = ({film, edit, closeForm}: FilmFormProps) => {
     return (
         <Form>
             {
+                edit ? <h2>Edit movie</h2> : <h2>Add movie</h2>
+            }
+            {
                 edit && (
                     <label htmlFor="id">
                         <span>Movie Id</span>

@@ -15,6 +15,8 @@ const PopUpWrapper = styled.div`
     display: flex;
     flex-direction: column;
     max-width: 650px;
+    max-height: 85vh;
+    overflow-y: auto;
     padding: 20px 50px;
     margin: 70px auto 0 auto;
     background: #${variables.background.MAIN};

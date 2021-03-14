@@ -1,16 +1,22 @@
 import React, {useState} from 'react';
-import { ThemeProvider } from "styled-components";
-import MainLogo from "../MainLogo";
 import HeaderStyled from "./style";
-import { Button, ButtonTheme } from "../Button";
 import poster from "../../assets/images/poster.jpg";
 import FilmForm from "../FilmForm";
 import { PopUp } from "../PopUp"
+import {Search} from "../SearchFiled";
+import {FilmDetails} from "../FilmDetails";
+import AppContext from "../../helpers/context";
 
-const Header = () => {
+interface HeaderProps {
+    isSearch: boolean,
+    openSearch: () => void
+}
+
+const Header = ({isSearch, openSearch}: HeaderProps) => {
 
   const [isFormActive, setFormActive] = useState(false);
   const closeForm = () => setFormActive(false);
+  const openForm = () => setFormActive(true);
 
   return (
     <HeaderStyled>
@@ -23,26 +29,14 @@ const Header = () => {
 
       <div className="position">
         <div className="content-wrapper">
-          <div className="wrapper">
-            <MainLogo />
-            <ThemeProvider theme={ButtonTheme}>
-              <Button onClick={() => setFormActive(true)}>
-                + Add movie
-              </Button>
-            </ThemeProvider>
-          </div>
-
-          <h1 className="title">
-            Find your movie
-          </h1>
-
-          <div className="search-wrapper">
-            <input className="search-input" placeholder="What do you want to watch?" />
-
-            <Button>
-              Search
-            </Button>
-          </div>
+            {
+                isSearch ? <Search openForm={openForm} /> :
+                    <AppContext.Consumer>
+                        {value =>
+                            <FilmDetails openSearch={openSearch} film={value.film} />
+                        }
+                    </AppContext.Consumer>
+            }
         </div>
 
         {

@@ -7,6 +7,13 @@ import FilmOptions from "../FilmOptions";
 import FilmForm from "../FilmForm";
 import { PopUp } from "../PopUp";
 import DeleteFilm from "../DeleteFilm";
+import styled from "styled-components";
+import AppContext from "../../helpers/context";
+
+const Poster = styled.img`
+  max-width: 350px;
+  height: 525px;
+`;
 
 type FilmsProps = {
   film: FilmProps
@@ -53,11 +60,25 @@ const Film = ({film}: FilmsProps) => {
       }
       <FilmOptions action={ showActions } />
 
+      <AppContext.Consumer>
+          {value =>
+              <a
+                  href="#"
+                  onClick={() => value.setFilm(film)}
+              >
+                  <Poster
+                      src={film.poster_path}
+                      alt={film.title}
+                  />
+              </a>
+          }
+
+      </AppContext.Consumer>
+
       <FilmInfo
         title={film.title}
         release={release}
         genres={film.genres}
-        poster_path={film.poster_path}
       />
 
       {

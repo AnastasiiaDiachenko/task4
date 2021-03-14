@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { variables } from "../../helpers/styleVariables";
 
 const HeaderStyled = styled.header`
   position: relative;
@@ -66,6 +65,19 @@ const HeaderStyled = styled.header`
       input {
         margin-bottom: 20px;
       }
+    }
+  }
+  
+  .film-details {
+    display: flex;
+    padding-top: 10px;
+
+    @media (max-width: 850px) {
+      flex-direction: column;
+      align-items: center;
+      max-height: 280px;
+      padding-top: 10px;
+      overflow-y: auto;
     }
   }
 

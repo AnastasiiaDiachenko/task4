@@ -11,6 +11,10 @@ const MainMenu = styled.div`
   text-transform: uppercase;
   color: #${variables.colors.MAIN};
   font-size: 20px;
+
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
 `;
 
 const Menu = () => (

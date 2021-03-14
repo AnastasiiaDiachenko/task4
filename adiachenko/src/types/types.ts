@@ -1,5 +1,5 @@
 type FilmProps = {
-  id: number;
+  id?: number;
   title: string;
   tagline: string;
   vote_average: number;

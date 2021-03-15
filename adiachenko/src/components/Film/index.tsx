@@ -26,27 +26,27 @@ const Film = ({film}: FilmsProps) => {
   const [isDeleteOpen, setDeleteOpen] = useState(false);
   const release = film.release_date.split('-')[0];
 
-  const hideActions = useCallback(() => setActionsVisible(false), []);
+  const hideActions = () => setActionsVisible(false);
+
   const showActions = useCallback(() => setActionsVisible(true), []);
 
-  const closeForm = useCallback(() => setFormActive(false), []);
-  const closeDeleteForm = useCallback(() => setDeleteOpen(false), []);
+  const closeForm = () => setFormActive(false);
+  const closeDeleteForm = () => setDeleteOpen(false);
 
-  const openDelete = useCallback(() => {
-      setDeleteOpen(true);
-      hideActions();
-  }, []);
+  const openDelete = () => {
+    setDeleteOpen(true);
+    hideActions();
+  };
 
-  const openEdit = useCallback(() => {
-      setFormActive(true);
-      hideActions();
-  }, []);
+  const openEdit = () => {
+    setFormActive(true);
+    hideActions();
+  };
 
-
-  const deleteFilm = useCallback(() => {
-      console.log('Deleted ! ' + film.id);
-      closeDeleteForm();
-  }, []);
+  const deleteFilm = () => {
+    console.log('Deleted ! ' + film.id);
+    closeDeleteForm();
+  };
 
   return (
     <FilmStyled>

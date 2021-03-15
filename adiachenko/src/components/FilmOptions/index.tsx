@@ -16,4 +16,4 @@ const FilmOptions = ({ action }: FilmOptionsProps) => (
   </Button>
 );
 
-export default FilmOptions;
+export default React.memo(FilmOptions);

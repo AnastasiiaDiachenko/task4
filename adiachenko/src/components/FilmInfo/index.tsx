@@ -51,5 +51,5 @@ const FilmInfo = (
   </>
 );
 
-export default FilmInfo;
+export default React.memo(FilmInfo);
 

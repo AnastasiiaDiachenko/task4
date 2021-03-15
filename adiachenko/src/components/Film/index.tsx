@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import FilmProps from '../../types/types';
 import FilmStyled from "./style";
 import FilmActions from "../FilmActions";
 import FilmInfo from "../FilmInfo";
 import FilmOptions from "../FilmOptions";
 import FilmForm from "../FilmForm";
-import { PopUp } from "../PopUp";
+import PopUp from "../PopUp";
 import DeleteFilm from "../DeleteFilm";
 import styled from "styled-components";
 import AppContext from "../../helpers/context";
@@ -26,27 +26,27 @@ const Film = ({film}: FilmsProps) => {
   const [isDeleteOpen, setDeleteOpen] = useState(false);
   const release = film.release_date.split('-')[0];
 
-  const hideActions = () => setActionsVisible(false);
-  const showActions = () => setActionsVisible(true);
+  const hideActions = useCallback(() => setActionsVisible(false), []);
+  const showActions = useCallback(() => setActionsVisible(true), []);
 
-  const closeForm = () => setFormActive(false);
-  const closeDeleteForm = () => setDeleteOpen(false);
+  const closeForm = useCallback(() => setFormActive(false), []);
+  const closeDeleteForm = useCallback(() => setDeleteOpen(false), []);
 
-  const openDelete = () => {
+  const openDelete = useCallback(() => {
       setDeleteOpen(true);
       hideActions();
-  };
+  }, []);
 
-  const openEdit = () => {
+  const openEdit = useCallback(() => {
       setFormActive(true);
       hideActions();
-  };
+  }, []);
 
 
-  const deleteFilm = () => {
+  const deleteFilm = useCallback(() => {
       console.log('Deleted ! ' + film.id);
       closeDeleteForm();
-  };
+  }, []);
 
   return (
     <FilmStyled>
@@ -109,4 +109,4 @@ const Film = ({film}: FilmsProps) => {
   )
 };
 
-export default Film;
+export default React.memo(Film);

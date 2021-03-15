@@ -24,4 +24,4 @@ const FilmActions = ({close, openEdit, openDelete}: FilmActionsProps) => (
   </Actions>
 );
 
-export default FilmActions;
+export default React.memo(FilmActions);

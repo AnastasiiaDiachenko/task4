@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import HeaderStyled from "./style";
 import poster from "../../assets/images/poster.jpg";
 import FilmForm from "../FilmForm";
-import { PopUp } from "../PopUp"
+import PopUp from "../PopUp"
 import {Search} from "../SearchFiled";
 import {FilmDetails} from "../FilmDetails";
 import AppContext from "../../helpers/context";

@@ -17,11 +17,16 @@ import GlobalStyle from "./globalStyles";
 const App = () => {
   const [isSearch, setSearch] = useState(true);
   const [film, setFilm] = useState(null);
+  const [sortCategory, setSortCategory] = useState('all');
   const openSearch = () => setSearch(true);
   const openFilmDetails = () => setSearch(false);
 
   const defaultValue = {
       film,
+      sortCategory,
+      setCategory: (category) => {
+          setSortCategory(category);
+      },
       setFilm: (film) => {
           setFilm(film)
           openFilmDetails();

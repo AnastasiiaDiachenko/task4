@@ -61,15 +61,17 @@ const Film = ({film}: FilmsProps) => {
           />
       }
       <FilmOptions action={ showActions } />
-      <a
+        <a
           href="#"
           onClick={() => contextValue.setFilm(film)}
-      >
-          <Poster
+        >
+          <div className="wrapper">
+            <Poster
               src={film.poster_path}
               alt={film.title}
-          />
-      </a>
+            />
+          </div>
+        </a>
 
       <FilmInfo
         title={film.title}

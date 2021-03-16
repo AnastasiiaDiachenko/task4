@@ -6,8 +6,14 @@ import {variables} from "../../helpers/styleVariables";
 import {Button} from "../Button";
 
 const Poster = styled.img`
-    max-width: 200px;
-    padding-right: 15px;
+  max-width: 200px;
+`;
+
+const PosterWrapper = styled.div`
+  min-width: 200px;
+  height: 300px;
+  background-color: lightblue;;
+  margin-right: 15px;
 `;
 
 const TitleWrapper = styled.div`
@@ -47,7 +53,9 @@ const FilmDetails = ({openSearch, film}: FilmDetailsProps) => (
             <Button onClick={() => openSearch()}>Search</Button>
         </div>
         <div className="film-details">
-            <Poster src={film.poster_path} alt="Poster" />
+            <PosterWrapper>
+                <Poster src={film.poster_path} alt="Poster" />
+            </PosterWrapper>
             <div>
                 <TitleWrapper>
                     <h2>{film.title}</h2>

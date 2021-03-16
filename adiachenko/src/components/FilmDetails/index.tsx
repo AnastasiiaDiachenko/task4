@@ -29,6 +29,8 @@ const TitleWrapper = styled.div`
     padding: 10px;
     border: 4px solid #${variables.colors.LOGO};
     border-radius: 50%;
+    min-width: 35px;
+    text-align: center;
   }
 `;
 

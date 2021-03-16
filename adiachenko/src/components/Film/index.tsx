@@ -8,7 +8,7 @@ import FilmForm from "../FilmForm";
 import PopUp from "../PopUp";
 import DeleteFilm from "../DeleteFilm";
 import styled from "styled-components";
-import AppContext from "../../helpers/context";
+import { useAppContext } from "../../helpers/context";
 
 const Poster = styled.img`
   max-width: 350px;
@@ -25,6 +25,8 @@ const Film = ({film}: FilmsProps) => {
   const [isFormActive, setFormActive] = useState(false);
   const [isDeleteOpen, setDeleteOpen] = useState(false);
   const release = film.release_date.split('-')[0];
+
+  const contextValue = useAppContext();
 
   const hideActions = () => setActionsVisible(false);
 
@@ -59,21 +61,15 @@ const Film = ({film}: FilmsProps) => {
           />
       }
       <FilmOptions action={ showActions } />
-
-      <AppContext.Consumer>
-          {value =>
-              <a
-                  href="#"
-                  onClick={() => value.setFilm(film)}
-              >
-                  <Poster
-                      src={film.poster_path}
-                      alt={film.title}
-                  />
-              </a>
-          }
-
-      </AppContext.Consumer>
+      <a
+          href="#"
+          onClick={() => contextValue.setFilm(film)}
+      >
+          <Poster
+              src={film.poster_path}
+              alt={film.title}
+          />
+      </a>
 
       <FilmInfo
         title={film.title}

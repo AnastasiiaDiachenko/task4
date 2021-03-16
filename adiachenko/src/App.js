@@ -4,7 +4,7 @@ import MainContent from "./components/MainContent";
 import Header from "./components/Header";
 import { ThemeProvider } from "styled-components";
 import { variables } from './helpers/styleVariables';
-import AppContext from "./helpers/context";
+import { AppContext } from "./helpers/context";
 
 const MainTheme = {
   color: `#${variables.colors.MAIN}`,

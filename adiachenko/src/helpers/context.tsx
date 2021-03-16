@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import FilmProps from "../types/types";
 
 const AppContext = React.createContext({
@@ -6,4 +6,6 @@ const AppContext = React.createContext({
     setFilm: (film: FilmProps) => null
 });
 
-export default AppContext;
+const useAppContext = () => useContext(AppContext);
+
+export { AppContext, useAppContext };

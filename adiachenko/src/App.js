@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Footer from './components/Footer';
 import MainContent from "./components/MainContent";
 import Header from "./components/Header";
 import { ThemeProvider } from "styled-components";
 import { variables } from './helpers/styleVariables';
+import { AppContext } from "./helpers/context";
 
 const MainTheme = {
   color: `#${variables.colors.MAIN}`,
@@ -13,14 +14,37 @@ const MainTheme = {
 
 import GlobalStyle from "./globalStyles";
 
-function App() {
+const App = () => {
+  const [isSearch, setSearch] = useState(true);
+  const [film, setFilm] = useState(null);
+  const [sortCategory, setSortCategory] = useState('all');
+  const openSearch = () => setSearch(true);
+  const openFilmDetails = () => setSearch(false);
+
+  const defaultValue = {
+      film,
+      sortCategory,
+      setCategory: (category) => {
+          setSortCategory(category);
+      },
+      setFilm: (film) => {
+          setFilm(film)
+          openFilmDetails();
+      }
+  };
+
   return (
       <div className="app">
         <GlobalStyle />
         <ThemeProvider theme={ MainTheme }>
-          <Header />
-          <MainContent />
-          <Footer />
+            <AppContext.Provider value={defaultValue}>
+                <Header
+                    isSearch={isSearch}
+                    openSearch={openSearch}
+                />
+                <MainContent />
+                <Footer />
+            </AppContext.Provider>
         </ThemeProvider>
       </div>
   );

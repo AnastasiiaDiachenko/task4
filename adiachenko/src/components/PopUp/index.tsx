@@ -55,4 +55,4 @@ const PopUp = ({closeForm, children}: PopUpProps) => (
     </PopUpWrapper>
 );
 
-export {PopUp};
+export default React.memo(PopUp);

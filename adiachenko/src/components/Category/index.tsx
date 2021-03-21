@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useMemo } from "react";
+import classNames from "classnames";
 import styled from "styled-components";
 import { variables } from '../../helpers/styleVariables';
+import {useAppContext} from "../../helpers/context";
 
 const CategoryUl = styled.ul`
   display: flex;
@@ -33,21 +35,57 @@ const CategoryUl = styled.ul`
   }
 `;
 
-const Category = () => (
-  <CategoryUl>
-    <li className="active">
-      ALL
-    </li>
-    <li>
-      DOCUMENTARY
-    </li>
-    <li>
-      COMEDY
-    </li>
-    <li>
-      CRIME
-    </li>
-  </CategoryUl>
-);
+const categories = [
+    {
+        type: 'All'
+    },
+    {
+        type: 'Documentary'
+    },
+    {
+        type: 'Comedy'
+    },
+    {
+        type: 'Crime'
+    }
+];
+
+interface CategoryLiProps {
+    type: string,
+    category: string,
+    setCategory: () => void
+}
+
+const CategoryLi = ({type, category,  setCategory}: CategoryLiProps) => {
+    const isActive = useMemo(() => type.toLowerCase() === category.toLowerCase(), [type, category]);
+
+    return (
+        <li
+            className={classNames({
+                active: isActive
+            })}
+            onClick={() => setCategory()}
+        >
+            {type}
+        </li>
+)};
+
+const Category = () => {
+    const contextValue = useAppContext();
+
+    return (
+        <CategoryUl>
+            {
+                categories.map(category =>
+                    <CategoryLi
+                        key={category.type}
+                        type={category.type}
+                        category={contextValue.sortCategory}
+                        setCategory={() => contextValue.setCategory(category.type)}
+                    />)
+            }
+        </CategoryUl>
+    );
+}
 
 export default Category;

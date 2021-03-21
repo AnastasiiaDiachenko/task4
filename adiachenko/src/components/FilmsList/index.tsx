@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import filmsConfig from "../../helpers/config";
 import Film from "../Film";
 import FilmProps from '../../types/types';
 import styled from 'styled-components';
+import {useAppContext} from "../../helpers/context";
 
 const FilmsStyled = styled.ul`
   display: flex;
@@ -25,19 +26,34 @@ const FoundCountStyled = styled.div`
 const FilmsList = () => {
 
   const [films, setFilms] = useState([]);
+  const [sortedFilms, setSortedFilms] = useState([]);
   const [isLoading, setLoading] = useState(false);
+  const contextValue = useAppContext();
+
+  const sortingByCategory = useCallback((filmsList: FilmProps[], type: string) => {
+    if (type === 'All') {
+      return filmsList;
+    }
+
+    return filmsList.filter(film => film.genres.includes(type))
+  }, []);
 
   useEffect(() => {
     setLoading(true);
 
     setTimeout(() => {
       setFilms(filmsConfig);
+      setSortedFilms(filmsConfig);
 
       setLoading(false);
     }, 5000);
   }, []);
 
-  const filmsList = films.map((film: FilmProps) =>
+  useEffect(() => {
+    setSortedFilms(sortingByCategory(films, contextValue.sortCategory));
+  }, [contextValue.sortCategory]);
+
+  const filmsList = sortedFilms.map((film: FilmProps) =>
     <li key={film.id}>
       <Film film={film} />
     </li>
@@ -53,7 +69,7 @@ const FilmsList = () => {
                 films.length > 0 ? (
                   <>
                     <FoundCountStyled>
-                      { films.length } movies found
+                      { sortedFilms.length } movies found
                     </FoundCountStyled>
                     <FilmsStyled>
                       {filmsList}

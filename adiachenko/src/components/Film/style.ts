@@ -6,6 +6,13 @@ const FilmStyled = styled.div`
   max-width: 350px;
   font-size: 17px;
   color: #${variables.colors.MAIN};
+  
+  .wrapper {
+    min-width: 350px;
+    height: 525px;
+    
+    background-color: lightblue;
+  }
 `;
 
 export default FilmStyled;

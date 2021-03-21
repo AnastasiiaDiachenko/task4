@@ -26,25 +26,16 @@ const Genre = styled.div`
 type FilmInfoProps = {
   title: string,
   release: string,
-  genres: string[],
-  poster_path: string,
+  genres: string[]
 };
 
 const FilmInfo = (
   {
     title,
     release,
-    genres,
-    poster_path
+    genres
   }: FilmInfoProps) => (
   <>
-    <a href="#">
-      <Poster
-        src={ poster_path }
-        alt={ title }
-      />
-    </a>
-
     <Info>
         <span>
           { title }
@@ -60,5 +51,5 @@ const FilmInfo = (
   </>
 );
 
-export default FilmInfo;
+export default React.memo(FilmInfo);
 

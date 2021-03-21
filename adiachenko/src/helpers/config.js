@@ -160,6 +160,169 @@ const filmsConfig = [
       "Romance"
     ],
     "runtime": 123
+  },
+  {
+    "id": 483877,
+    "title": "15+ IQ Krachoot",
+    "tagline": "",
+    "vote_average": 3.3,
+    "vote_count": 6,
+    "release_date": "2017-08-03",
+    "poster_path": "https://image.tmdb.org/t/p/w500/1RxnEJzXYv5GgPszbHNsWTXPC6M.jpg",
+    "overview": "A teenage comedy film about a young Yorkie. \"Rising\" opened the first movie on screen.  The story of fun gangs of teenage age 15+ hormones gurgling at the curiosity to try on their love and sex has spread out.",
+    "budget": 0,
+    "revenue": 0,
+    "genres": [
+      "Comedy"
+    ],
+    "runtime": 104
+  },
+  {
+    "id": 98566,
+    "title": "Teenage Mutant Ninja Turtles",
+    "tagline": "Mysterious. Dangerous. Reptilious. You've never seen heroes like this.",
+    "vote_average": 5.8,
+    "vote_count": 3224,
+    "release_date": "2014-08-07",
+    "poster_path": "https://image.tmdb.org/t/p/w500/oDL2ryJ0sV2bmjgshVgJb3qzvwp.jpg",
+    "overview": "The city needs heroes. Darkness has settled over New York City as Shredder and his evil Foot Clan have an iron grip on everything from the police to the politicians. The future is grim until four unlikely outcast brothers rise from the sewers and discover their destiny as Teenage Mutant Ninja Turtles. The Turtles must work with fearless reporter April and her wise-cracking cameraman Vern Fenwick to save the city and unravel Shredder's diabolical plan.",
+    "budget": 125000000,
+    "revenue": 477200000,
+    "genres": [
+      "Science Fiction",
+      "Action",
+      "Adventure",
+      "Fantasy",
+      "Comedy"
+    ],
+    "runtime": 101
+  },
+  {
+    "id": 353616,
+    "title": "Pitch Perfect 3",
+    "tagline": "Last Call Pitches",
+    "vote_average": 6.4,
+    "vote_count": 727,
+    "release_date": "2017-12-21",
+    "poster_path": "https://image.tmdb.org/t/p/w500/fchHLsLjFvzAFSQykiMwdF1051.jpg",
+    "overview": "After the highs of winning the world championships, the Bellas find themselves split apart and discovering there aren't job prospects for making music with your mouth. But when they get the chance to reunite for an overseas USO tour, this group of awesome nerds will come together to make some music, and some questionable decisions, one last time.",
+    "budget": 45000000,
+    "revenue": 183600000,
+    "genres": [
+      "Comedy",
+      "Music"
+    ],
+    "runtime": 93
+  },{
+    "id": 353486,
+    "title": "Jumanji: Welcome to the Jungle",
+    "tagline": "The game has evolved.",
+    "vote_average": 6.5,
+    "vote_count": 3330,
+    "release_date": "2017-12-09",
+    "poster_path": "https://image.tmdb.org/t/p/w500/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
+    "overview": "The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
+    "budget": 90000000,
+    "revenue": 928901353,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Family"
+    ],
+    "runtime": 119
+  },
+  {
+    "id": 11471,
+    "title": "A Better Tomorrow",
+    "tagline": "Are the police above the law? I'll send my insurance claim to you.",
+    "vote_average": 7.4,
+    "vote_count": 126,
+    "release_date": "1986-08-02",
+    "poster_path": "https://image.tmdb.org/t/p/w500/vAhUCI5s9qT6dkWHudjfxnKdQYj.jpg",
+    "overview": "A reforming ex-gangster tries to reconcile with his estranged policeman brother, but the ties to his former gang are difficult to break.",
+    "budget": 0,
+    "revenue": 4469460,
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "runtime": 95
+  },
+  {
+    "id": 474753,
+    "title": "The China Hustle",
+    "tagline": "There are no good guys in this story.",
+    "vote_average": 6.5,
+    "vote_count": 5,
+    "release_date": "2018-03-30",
+    "poster_path": "https://image.tmdb.org/t/p/w500/3k6a2ZshjaFdN23bUm3kRdxr5Ny.jpg",
+    "overview": "An unsettling and eye-opening Wall Street horror story about Chinese companies, the American stock market, and the opportunistic greed behind the biggest heist you've never heard of.",
+    "budget": 0,
+    "revenue": 0,
+    "genres": [
+      "Documentary"
+    ],
+    "runtime": 82
+  },
+  {
+    "id": 16290,
+    "title": "Jackass 3D",
+    "tagline": "Don't try this at home",
+    "vote_average": 6.4,
+    "vote_count": 509,
+    "release_date": "2010-10-15",
+    "poster_path": "https://image.tmdb.org/t/p/w500/5j9VFEVjYn0FtqZGqDcmMPYSVoY.jpg",
+    "overview": "Jackass 3D is a 3-D film and the third movie of the Jackass series. It follows the same premise as the first two movies, as well as the TV series. It is a compilation of various pranks, stunts and skits. Before the movie begins, a brief introduction is made by Beavis and Butt-head explaining the 3D technology behind the movie. The intro features the cast lining up and then being attacked by various objects in slow-motion. The movie marks the 10th anniversary of the franchise, started in 2000.",
+    "budget": 20000000,
+    "revenue": 117224271,
+    "genres": [
+      "Comedy",
+      "Documentary",
+      "Action"
+    ],
+    "runtime": 94
+  },
+  {
+    "id": 346685,
+    "title": "The Girl on the Train",
+    "tagline": "What you see can hurt you.",
+    "vote_average": 6.2,
+    "vote_count": 2437,
+    "release_date": "2016-10-05",
+    "poster_path": "https://image.tmdb.org/t/p/w500/AhTO2QWG0tug7yDoh0XoaMhPt3J.jpg",
+    "overview": "Rachel Watson, devastated by her recent divorce, spends her daily commute fantasizing about the seemingly perfect couple who live in a house that her train passes every day, until one morning she sees something shocking happen there and becomes entangled in the mystery that unfolds.",
+    "budget": 45000000,
+    "revenue": 173185859,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Mystery",
+      "Romance",
+      "Thriller"
+    ],
+    "runtime": 112
+  },
+  {
+    "id": 452507,
+    "title": "1922",
+    "tagline": "",
+    "vote_average": 6,
+    "vote_count": 577,
+    "release_date": "2017-10-20",
+    "poster_path": "https://image.tmdb.org/t/p/w500/q4FQOiSRhTLWulHl5Vpg37FMArH.jpg",
+    "overview": "A simple yet proud rancher conspires to murder his wife for financial gain, convincing his teenage son to participate.",
+    "budget": 0,
+    "revenue": 0,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Horror",
+      "Mystery",
+      "Thriller"
+    ],
+    "runtime": 101
   }
 ];
 

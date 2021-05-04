@@ -24,7 +24,7 @@
         "react",
         "@typescript-eslint"
     ],
-    "ignorePatterns": ["*test.js"],
+    "ignorePatterns": ["*test.js", "stories/"],
     "rules": {
         "eslint linebreak-style": 0,
         "linebreak-style": 0,

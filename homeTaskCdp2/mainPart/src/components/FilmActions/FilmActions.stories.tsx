@@ -3,7 +3,7 @@ import FilmActions from './index';
 
 export default {
   title: 'FilmActions',
-  component: FilmActions,
+  component: FilmActions
 };
 
 const fn = () => 'test 2';

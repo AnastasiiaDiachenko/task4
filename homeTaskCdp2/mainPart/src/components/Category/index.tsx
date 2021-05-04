@@ -16,6 +16,7 @@ interface CategoryProps {
   setCategory: (type: string) => void
 }
 
+//PATTERN: Array as children
 const Category = ({ category, setCategory }: CategoryProps) => (
   <CategoryUl>
     {

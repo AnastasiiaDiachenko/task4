@@ -39,6 +39,7 @@ const Film = ({ film }: FilmsProps) => {
     toggleDelete();
   };
 
+  // PATTERN: conditional rendering
   return (
     <FilmStyled>
       {

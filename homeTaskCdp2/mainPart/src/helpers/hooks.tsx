@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
 
+ // PATTERN: custom hook
 const useToggle = (initialValue?: boolean): [flag: boolean, toggle: () => void] => {
   const init = initialValue || false;
 

@@ -58,4 +58,5 @@ const CustomInput = ({
 };
 
 export { Label };
+// PATTERN: moized components
 export default React.memo(CustomInput);

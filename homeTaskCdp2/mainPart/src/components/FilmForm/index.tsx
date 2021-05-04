@@ -7,9 +7,11 @@ type genreSelectedType = {
   label: string
 }
 
+  // PATTERN: props destructoring
 const FilmForm = ({
   values, errors, handleChange, touched, setFieldValue, handleBlur, setTouched
 }: any) => {
+  // PATTERN: moized cllback
   const setGenres = useCallback((selected: genreSelectedType[]) => {
     setFieldValue('genres', selected.map((genre: genreSelectedType) => genre.value));
     setTouched(

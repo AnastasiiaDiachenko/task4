@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { variables } from '../../helpers/styleVariables';
 
+// PATTERN: styled Components
 const Button = styled.button`
   font-size: 1.5em;
   border-radius: 10px;
@@ -12,6 +13,7 @@ const Button = styled.button`
   background: ${(props) => props.theme.bg_color};
 `;
 
+// PATTERN: defaultProps
 Button.defaultProps = {
   theme: {
     color: `#${variables.colors.MAIN}`,

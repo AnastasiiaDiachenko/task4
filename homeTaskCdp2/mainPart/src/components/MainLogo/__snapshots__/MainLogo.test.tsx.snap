@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MainLogo /> should renders correctly when user is on logged in page 1`] = `
+<span
+  className="sc-bdfBwQ dvqrJZ"
+>
+  <span
+    className="sc-gsTCUz bCQwq"
+  >
+    netflix
+  </span>
+  roulette
+</span>
+`;

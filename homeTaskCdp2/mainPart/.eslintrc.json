@@ -1,0 +1,68 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "jest": true
+    },
+    "extends": [
+        "airbnb",
+        "plugin:react/recommended"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "ignorePatterns": ["*test.js"],
+    "rules": {
+        "eslint linebreak-style": 0,
+        "linebreak-style": 0,
+        "import/prefer-default-export": 0,
+        "import/no-unresolved": 0,
+        "strict": [2, "never"],
+        "react/jsx-uses-react": 2,
+        "react/jsx-uses-vars": 2,
+        "react/react-in-jsx-scope": 1,
+        "import/extensions": ["error", "ignorePackages", {
+            "js": "never",
+            "mjs": "never",
+            "jsx": "never",
+            "ts": "never",
+            "tsx": "never"
+        }],
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "no-unused-vars": [
+            "error",
+            {
+                "varsIgnorePattern": "^React$"
+            }
+        ],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".tsx", ".ts"] }],
+        "jsx-a11y/no-noninteractive-element-interactions": 0,
+        "jsx-a11y/click-events-have-key-events": 0,
+        "react/button-has-type": 0,
+        "jsx-a11y/no-static-element-interactions": 0,
+        "jsx-a11y/label-has-associated-control": 0,
+        "react/require-default-props": 0,
+        "comma-dangle": ["error", "never"]
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]
+            }
+        }
+    }
+}
